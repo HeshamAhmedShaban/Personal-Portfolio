@@ -578,25 +578,25 @@ main .wrapper .head p {
     color: var(--gray--white);
 }
 
+
+
+
 /* 
     4. Latest Work
 */
-
-
-
 
 
 .latest-work ul {
     grid-template-columns: repeat(auto-fit , minmax(270px , 1fr));
 }
 
-.latest-work ul li .thumbnail {
+:where(.latest-work , .portfolio) li .thumbnail {
     height: 200px;
     border-radius: 20px;
     overflow: hidden;
 }
 
-.latest-work ul li .thumbnail img {
+:where(.latest-work , .portfolio) ul li .thumbnail img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -613,6 +613,84 @@ main .wrapper .head p {
     margin: 16px 0 0 16px;
     color: var(--gray--color);
 }
+
+
+/* 
+    5. Portfolio
+*/
+
+.portfolio ul {
+    grid-template-columns: repeat(auto-fit , minmax(250px , 1fr));
+    grid-auto-flow:column;
+    grid-auto-columns: minmax(250px , 1fr);
+    overflow-x: auto;
+}
+
+.portfolio ul li .thumbnail {
+    position: relative;
+    height: 300px;
+} 
+
+.portfolio ul li .thumbnail img {
+    object-position: left;
+    transition: object-position 1s;
+} 
+
+.portfolio ul li:hover .thumbnail img {
+    object-position: right;
+} 
+
+.portfolio ul li .thumbnail .link {
+    position: absolute;
+    top: 50%;
+    right: -13px;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--pure-white);
+    transform:translate(100% , -50%);
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.portfolio ul li:hover .thumbnail .link{
+    transform: translate(0 , -50%);
+    transition: transform 0.3s 0.3s;
+}
+
+.portfolio ul li .thumbnail .link:hover{
+    box-shadow: 0 0 0 10px var(--primary-04-color);
+    animation: blinkprimary 1s infinite;
+}
+
+.portfolio ul li.has-hover {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, var(--light-color) , transparent);
+    border-radius: 20px;
+}
+
+.portfolio ul li.has-hover a {
+    font-size: 28px;
+    font-weight: 600;
+    margin-left: 32px;
+    z-index: 1;
+}
+
+.portfolio ul li.has-hover a::before {
+    width: 32px;
+    height: 32px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
 
 
 
@@ -657,27 +735,12 @@ main .wrapper .head p {
         color: inherit;
         font-weight: 600;
     }
+    .portfolio ul {
+        grid-auto-flow: row ;
+        grid-auto-columns: inherit;
+        overflow-x: unset;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -685,7 +748,12 @@ main .wrapper .head p {
     .hero .wrapper .image {
         transform: none;
     }
+
     .hero .text > * {
         padding: 0 ;
+    }
+
+    .portfolio ul {
+        grid-template-columns: repeat(auto-fit , minmax(370px , 1fr));
     }
 }
