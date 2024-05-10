@@ -481,8 +481,8 @@ main .wrapper .head p {
     border-radius: 50%;
     z-index: 10; */
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     position: relative;
     width: 150px;
     height: 150px;
@@ -578,12 +578,41 @@ main .wrapper .head p {
     color: var(--gray--white);
 }
 
+/* 
+    4. Latest Work
+*/
 
 
 
 
 
+.latest-work ul {
+    grid-template-columns: repeat(auto-fit , minmax(270px , 1fr));
+}
 
+.latest-work ul li .thumbnail {
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.latest-work ul li .thumbnail img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+
+.latest-work ul li:hover .thumbnail img {
+    transform: scale(1.1);
+}
+
+.latest-work ul li h3 {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 16px 0 0 16px;
+    color: var(--gray--color);
+}
 
 
 
