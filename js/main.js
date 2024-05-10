@@ -23,5 +23,30 @@ document.addEventListener("click", (e)=>{
     }
 })
 
+const nameElement = document.getElementById('name-animation');
+const myName = "I'm Hesham Ahmed Shaban";
+let index = 0;
 
+function writeName() {
+    if (index < myName.length) {
+        nameElement.textContent += myName[index];
+        index++;
+        setTimeout(writeName, 100); // Adjust the delay (in milliseconds) between each letter
+    } else {
+        setTimeout(eraseName, 1000); // Wait for 1 second before erasing the name
+    }
+}
+
+function eraseName() {
+    if (index >= 0) {
+        nameElement.textContent = myName.substring(0, index);
+        index--;
+        setTimeout(eraseName, 100); // Adjust the delay (in milliseconds) between erasing each letter
+    } else {
+        index = 0;
+        setTimeout(writeName, 1000); // Wait for 1 second before writing the name again
+    }
+}
+
+writeName(); // Start the animation
 

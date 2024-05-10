@@ -145,6 +145,19 @@ header .logo a {
     }
 }
 
+
+
+/* Keyframes for stretching animation */
+@keyframes stretch {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
 header .socials a:hover {
     color: var(--white-color);
 
@@ -467,6 +480,14 @@ main .wrapper .head p {
 
 }
 
+.skills li img {
+    transition: transform 0.8s ease; 
+}
+
+.skills li:hover img {
+    transform: scale(1.5); 
+}
+
 .skiils li {
     display: flex;
     align-items: center;
@@ -475,11 +496,6 @@ main .wrapper .head p {
 }
 
 .skills li :where(.circle , svg){
-    /* position: relative;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    z-index: 10; */
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -533,12 +549,10 @@ main .wrapper .head p {
 }
 
 .skills li .circle .inside span {
-    /* font-size: 24px;
-    color: var(--gray-color); */
     position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center the text */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
     font-size: 24px;
     color: var(--gray-color);
 }
@@ -564,14 +578,6 @@ main .wrapper .head p {
     transform: translateX(-50%);
 }
 
-/* .skills li.css .circle .dot {
-    transform:rotate(calc(3.6deg * var(--csspercent)));
-}
-
-.skiils li.css .circle .dot::before {
-    background-color: var(--csscolor);
-    box-shadow: 0 0 10px var(--csscolor)
-} */
 
 .skills li h4 {
     font-weight: 600;
