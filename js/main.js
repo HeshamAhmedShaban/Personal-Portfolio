@@ -31,9 +31,9 @@ function writeName() {
     if (index < myName.length) {
         nameElement.textContent += myName[index];
         index++;
-        setTimeout(writeName, 100); // Adjust the delay (in milliseconds) between each letter
+        setTimeout(writeName, 100); 
     } else {
-        setTimeout(eraseName, 1000); // Wait for 1 second before erasing the name
+        setTimeout(eraseName, 1000); 
     }
 }
 
@@ -41,12 +41,12 @@ function eraseName() {
     if (index >= 0) {
         nameElement.textContent = myName.substring(0, index);
         index--;
-        setTimeout(eraseName, 100); // Adjust the delay (in milliseconds) between erasing each letter
+        setTimeout(eraseName, 100); 
     } else {
         index = 0;
-        setTimeout(writeName, 1000); // Wait for 1 second before writing the name again
+        setTimeout(writeName, 1000); 
     }
 }
 
-writeName(); // Start the animation
+writeName(); 
 
