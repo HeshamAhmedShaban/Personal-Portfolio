@@ -50,3 +50,35 @@ function eraseName() {
 
 writeName(); 
 
+
+// dark and light mode
+
+const switcherBtn = document.querySelector("#dmswitcher");
+
+const themeMode=localStorage.getItem("theme");
+
+
+
+if(themeMode){
+    document.documentElement.setAttribute("data-theme",themeMode);
+    if(themeMode=="dark"){
+        switcherBtn.checked=true;
+    }
+}
+
+function modeSwitch(e){
+    if(e.target.checked){
+        document.documentElement.setAttribute("data-theme","dark");
+        localStorage.setItem("theme","dark");
+    }else{
+        document.documentElement.setAttribute("data-theme","light");
+        localStorage.setItem("theme","light");
+    }
+}
+
+
+switcherBtn.addEventListener("change",modeSwitch,false)
+
+
+// animation for scroll
+
