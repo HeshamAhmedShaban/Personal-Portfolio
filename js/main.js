@@ -82,3 +82,16 @@ switcherBtn.addEventListener("change",modeSwitch,false)
 
 // animation for scroll
 
+const io =new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("this");
+        }
+    })
+})
+
+const animation = document.querySelectorAll(".animate");
+
+animation.forEach(el=>{
+    io.observe(el);
+})
