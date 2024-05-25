@@ -95,3 +95,13 @@ const animation = document.querySelectorAll(".animate");
 animation.forEach(el=>{
     io.observe(el);
 })
+
+
+
+
+// let arr =[100,50,59,20,90,52];
+
+
+
+// console.log(arr.sort((a,b)=>b - a).slice(0,2))
+
